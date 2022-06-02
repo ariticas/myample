@@ -9,6 +9,92 @@
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 .w3-bar-block .w3-bar-item {padding:20px}
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
 </style>
 </head>
 <body>
@@ -50,46 +136,69 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <div class="w3-quarter">
-      <img src="assets/0.png" alt="Sandwich" style="width:100%">
-      <h3></h3>
+      <img src="assets/0.png" alt="Sandwich" style="width:100%" id="myImg" onclick="myFunction(this)">
       <p></p>
     </div>
+    
+        <div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
     <div class="w3-quarter">
-      <img src="assets/21.JPG" alt="Steak" style="width:100%">
+      <img src="assets/21.JPG" alt="Steak" style="width:100%"  id="myImg" onclick="myFunction(this)" >
       <h3></h3>
       <p></p>
     </div>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+       <img class="modal-content" id="img02">
+        <div id="caption"></div>
+    </div>
+
     <div class="w3-quarter">
-      <img src="assets/12.JPG" alt="Cherries" style="width:100%">
+      <img src="assets/12.JPG" alt="Cherries" style="width:100%" id="myImg" onclick="myFunction(this)">
       <h3></h3>
       <p></p>
     </div>
+    
+        <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+       <img class="modal-content" id="img01">
+        <div id="caption"></div>
+</div>
     <div class="w3-quarter">
-      <img src="assets/24.JPG" alt="Pasta and Wine" style="width:100%">
+      <img src="assets/24.JPG" alt="Pasta and Wine" style="width:100%" id="myImg" onclick="myFunction(this)">
       <h3></h3>
       <p></p>
     </div>
+            <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+       <img class="modal-content" id="img01">
+        <div id="caption"></div>
   </div>
   
   <!-- Second Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center">
     <div class="w3-quarter">
-      <img src="assets/6.JPG" alt="Popsicle" style="width:100%">
+      <img src="assets/6.JPG" alt="Popsicle" style="width:100%" id="myImg" onclick="myFunction(this)">
       <h3></h3>
       <p></p>
     </div>
     <div class="w3-quarter">
-      <img src="assets/2.JPG" alt="Salmon" style="width:100%">
+      <img src="assets/2.JPG" alt="Salmon" style="width:100%" id="myImg" onclick="myFunction(this)">
       <h3></h3>
       <p></p>
     </div>
     <div class="w3-quarter">
-      <img src="assets/15.JPG" alt="Sandwich" style="width:100%">
+      <img src="assets/15.JPG" alt="Sandwich" style="width:100%" id="myImg" onclick="myFunction(this)">
       <h3></h3>
       <p></p>
     </div>
     <div class="w3-quarter">
-      <img src="assets/9.JPG" alt="Croissant" style="width:100%">
+      <img src="assets/9.JPG" alt="Croissant" style="width:100%" id="myImg" onclick="myFunction(this)">
       <h3></h3>
       <p></p>
     </div>
@@ -110,14 +219,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <hr id="about">
 
   <!-- About Section -->
-  <div class="w3-container w3-padding-32 w3-center">
-    <h3>About Me, The Wire Man</h3><br>
-    <img src="assets/7.JPG" alt="Me" class="w3-image" style="display:block;margin:auto" width="800" height="533">
-    <div class="w3-padding-32">
-      <h4><b>I am Who I Am!</b></h4>
-      <h6><i>With Passion For Real, Good Food</i></h6>
-      <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-    </div>
+  <div class="w3-container w3-padding-8 w3-center">
+    <h3>The Wired Elephant </h3>
+        <div >
+      
+      <p> The Wired Elephant is made from pure copper wire and encorpoprates a single wire design apporoximately 90 meters long. The tusk comes from Canadian cattle , while its eyes are made of onyx stone. The piece feautures a heart of stone from the "????" region and carved by hand and embedded with natural blue sapphire stone ,weighing 4lbs 5.4oz
+Dimensión
+H-9”x W-61/2”x L-143/4</p>
+    </div> <br>
+    <img src="assets/0.png" alt="Me" class="w3-image" style="display:block;margin:auto" width="800" height="533" onclick="myFunction(this)">
+   
   </div>
   <hr>
   
@@ -160,7 +271,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <!-- End page content -->
 </div>
 
+
 <script>
+
 // Script to open and close sidebar
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
@@ -169,7 +282,31 @@ function w3_open() {
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
 }
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+
+var captionText = document.getElementById("caption");
+function myFunction(imgs){
+  modal.style.display = "block";
+  modalImg.src = imgs.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
 </script>
+
 
 </body>
 </html>
