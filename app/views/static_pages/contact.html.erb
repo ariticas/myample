@@ -18,6 +18,8 @@ span{
 
 <!-- Container (Contact Section) -->
 
+<div class="container text-center" style="padding-top:10px;"> <a class="btn btn-primary" href=<%contact_path%> role="button">Back to Gallery</a> </div>
+
 <div id="contact" class="container bg-grey" style="margin-top:30px;border-top:none">
     <p id="contactp1" class="text-center h4" style="margin-top:20px;">Interested in purchasing the Wired Elephant? Leave a note below and we will get in touch shortly.</p>
     
@@ -33,8 +35,8 @@ span{
             <p class="h4"><span class="text-primary glyphicon glyphicon-phone"></span> : 866-950-3506</p>
       <p class="h4"><span class="text-primary glyphicon glyphicon-envelope"></span> :  Support@wilfedo.com</p>
     </div>
-   
-    <div class="col-md-8 text-center"  >
+    <div class="container">
+    <div class="col-md-8 text-center "  >
     <%= form_with(model: @contact, local: true) do |f| %>
          <div class= "row" style="margin-top:10px;">
      <%= f.text_area :name ,maxlength: 255, size: "10x1" ,  placeholder:"Name" %>
@@ -51,13 +53,13 @@ span{
         <div class= "row" style="margin-top:10px;">
         <%= f.text_area :comment , maxlength: 255, size: "10x5 " , placeholder:"Message" %>
         </div>
-    
+   
         <div class= "row" style="margin-top:10px;">
-        <%= f.submit "Submit", class: "btn btn-primary" %>
+        <%= f.submit "Submit", class: "btn btn-success" %>
         </div>
 </div>
   </div>
-     
+        </div>
     <%end%>
 </div>
 
