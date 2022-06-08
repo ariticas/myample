@@ -1,0 +1,85 @@
+<style>
+textarea{
+width:100%;
+
+}
+
+.form-s{
+width:19%;
+}
+
+p , .h4, h2{
+font-family: "Karma"
+}
+span{
+  color:blue;
+}
+</style>
+
+<!-- Container (Contact Section) -->
+
+<div id="contact" class="container bg-grey" style="margin-top:30px;border-top:none">
+    <p id="contactp1" class="text-center h4" style="margin-top:20px;">Interested in purchasing the Wired Elephant? Leave a note below and we will get in touch shortly.</p>
+
+  <h2 class="text-center";">Inquiries</h2>
+  <div class="row" style="margin-top:40px;">
+    <div class="col-md-4">
+      
+       <p class="h4"><span class="glyphicon glyphicon-home"></span> Proudly made in Sask Canada</p>
+        
+            <p class="h4"><span class="glyphicon glyphicon-phone"></span> : 866-950-3506</p>
+      <p class="h4"><span class="glyphicon glyphicon-envelope"></span> :  Support@wilfedo.com</p>
+    </div>
+   
+    <div class="col-md-8 text-center"  >
+    <%= form_with(model: @contact, local: true) do |f| %>
+         <div class= "row" style="margin-top:10px;">
+     <%= f.text_area :name ,maxlength: 255, size: "30x1" ,  placeholder:"Name" %>
+    </div>
+    <div class= "row" style="margin-top:10px;">
+     <%= f.text_area:telephone,maxlength: 255, size: "30x1" ,  placeholder:"Telehone" %>
+    </div>
+           <div class= "row" style="margin-top:10px;">
+     <%= f.text_area:email,maxlength: 255, size: "30x1" ,  placeholder:"Email" %>
+    </div>
+       
+   
+    
+        <div class= "row" style="margin-top:10px;">
+        <%= f.text_area :comment , maxlength: 255, size: "30x5 " , placeholder:"Message" %>
+        </div>
+    
+        <div class= "row" style="margin-top:10px;">
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+        </div>
+</div>
+  </div>
+     
+    <%end%>
+</div>
+<script>
+$(window).on('resize', function() {
+    if($(window).width() > 900) {
+       
+        $('#contactp').addClass('h3');
+        $('#contactp').removeClass('h4');
+       
+        $('#contactp1').addClass('h3');
+        $('#contactp1').removeClass('h4');
+       
+    
+    }else{
+        
+        $('#contactp').removeClass('h3');
+        $('#contactp').addClass('h4');
+        
+        $('#contactp1').removeClass('h3');
+        $('#contactp1').addClass('h4');
+      
+    }
+})
+
+
+
+</script>
+
