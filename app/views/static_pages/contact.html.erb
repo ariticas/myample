@@ -20,33 +20,36 @@ span{
 
 <div id="contact" class="container bg-grey" style="margin-top:30px;border-top:none">
     <p id="contactp1" class="text-center h4" style="margin-top:20px;">Interested in purchasing the Wired Elephant? Leave a note below and we will get in touch shortly.</p>
+    
+    
 
   <h2 class="text-center";">Inquiries</h2>
   <div class="row" style="margin-top:40px;">
     <div class="col-md-4">
+    
       
-       <p class="h4"><span class="glyphicon glyphicon-home"></span> Proudly made in Sask Canada</p>
+       <p class="h4"><span class=" text-primary glyphicon glyphicon-home"></span> Proudly made in Sask Canada</p>
         
-            <p class="h4"><span class="glyphicon glyphicon-phone"></span> : 866-950-3506</p>
-      <p class="h4"><span class="glyphicon glyphicon-envelope"></span> :  Support@wilfedo.com</p>
+            <p class="h4"><span class="text-primary glyphicon glyphicon-phone"></span> : 866-950-3506</p>
+      <p class="h4"><span class="text-primary glyphicon glyphicon-envelope"></span> :  Support@wilfedo.com</p>
     </div>
    
     <div class="col-md-8 text-center"  >
     <%= form_with(model: @contact, local: true) do |f| %>
          <div class= "row" style="margin-top:10px;">
-     <%= f.text_area :name ,maxlength: 255, size: "30x1" ,  placeholder:"Name" %>
+     <%= f.text_area :name ,maxlength: 255, size: "10x1" ,  placeholder:"Name" %>
     </div>
     <div class= "row" style="margin-top:10px;">
-     <%= f.text_area:telephone,maxlength: 255, size: "30x1" ,  placeholder:"Telehone" %>
+     <%= f.text_area:telephone,maxlength: 255, size: "10x1" ,  placeholder:"Telehone" %>
     </div>
            <div class= "row" style="margin-top:10px;">
-     <%= f.text_area:email,maxlength: 255, size: "30x1" ,  placeholder:"Email" %>
+     <%= f.text_area:email,maxlength: 255, size: "10x1" ,  placeholder:"Email" %>
     </div>
        
    
     
         <div class= "row" style="margin-top:10px;">
-        <%= f.text_area :comment , maxlength: 255, size: "30x5 " , placeholder:"Message" %>
+        <%= f.text_area :comment , maxlength: 255, size: "10x5 " , placeholder:"Message" %>
         </div>
     
         <div class= "row" style="margin-top:10px;">
@@ -57,6 +60,53 @@ span{
      
     <%end%>
 </div>
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" >
+    <div class="w3-quarter">
+      <img src="assets/0.png" alt="Sandwich" style="width:100%" id="myImg" onclick="myFunction(this)">
+      <p></p>
+    </div>
+    
+        <div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+    <div class="w3-quarter">
+      <img src="assets/21.JPG" alt="Steak" style="width:100%"  id="myImg" onclick="myFunction(this)" >
+      <h3></h3>
+      <p></p>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+       <img class="modal-content" id="img02">
+        <div id="caption"></div>
+    </div>
+
+    <div class="w3-quarter">
+      <img src="assets/12.JPG" alt="Cherries" style="width:100%" id="myImg" onclick="myFunction(this)">
+      <h3></h3>
+      <p></p>
+    </div>
+    
+        <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+       <img class="modal-content" id="img01">
+        <div id="caption"></div>
+</div>
+    <div class="w3-quarter">
+      <img src="assets/15.JPG" alt="Pasta and Wine" style="width:100%" id="myImg" onclick="myFunction(this)">
+      <h3></h3>
+      <p></p>
+    </div>
+            <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+       <img class="modal-content" id="img01">
+        <div id="caption"></div>
+  </div>
 <script>
 $(window).on('resize', function() {
     if($(window).width() > 900) {
